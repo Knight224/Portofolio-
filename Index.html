@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Rizky</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Poppins', sans-serif; color:#fff; scroll-behavior:smooth;}
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top:0; left:0; right:0;
+      display:flex; justify-content:center; gap:25px;
+      padding:15px; background:rgba(0,0,0,0.7);
+      backdrop-filter:blur(10px); z-index:100;
+    }
+    nav a { color:cyan; text-decoration:none; font-weight:500; transition:0.3s; }
+    nav a:hover { color:white; }
+
+    /* Header */
+    header {
+      height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
+      background: url('foto.webp') no-repeat center/cover;
+      position:relative;
+    }
+    header::after {
+      content:'';
+      position:absolute; inset:0; background:rgba(0,0,0,0.6);
+    }
+    header h1 { font-size:3em; color:#fff; text-shadow:0 0 25px cyan; min-height:1.2em; z-index:1;}
+    header p { opacity:0.9; font-size:1.2em; margin-top:10px; z-index:1;}
+    header .btn { margin-top:25px; background:cyan; color:black; padding:12px 30px; border:none; border-radius:30px; font-weight:bold; cursor:pointer; z-index:1; transition:0.3s;}
+    header .btn:hover { background:white; transform:scale(1.1); }
+
+    /* Section umum */
+    section {
+      min-height:100vh; padding:80px 20px; display:flex; flex-direction:column; align-items:center; text-align:center;
+      background-size:cover; background-position:center; background-attachment:fixed; position:relative;
+    }
+    section::after {
+      content:''; position:absolute; inset:0; background:rgba(0,0,0,0.5);
+    }
+    section > * { position:relative; z-index:1; }
+
+    h2 { color:#fff; text-shadow:0 0 15px cyan; margin-bottom:20px; }
+    p { max-width:600px; line-height:1.7; opacity:0.95; }
+
+    /* Skills */
+    .skills { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-top:20px; }
+    .skill { border:2px solid cyan; border-radius:10px; padding:10px 20px; transition:0.3s; background:rgba(0,0,0,0.4);}
+    .skill:hover { background:cyan; color:black; transform:scale(1.1); }
+
+    /* Projects */
+    .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; width:100%; max-width:900px; }
+    .project { background:rgba(0,0,0,0.5); border-radius:15px; overflow:hidden; transition:0.4s; border:1px solid cyan; }
+    .project img { width:100%; height:180px; object-fit:cover; filter:brightness(0.8); transition:0.3s; }
+    .project:hover img { filter:brightness(1); }
+    .project:hover { transform:scale(1.05); }
+    .project h3 { margin:10px 0; color:cyan; }
+
+    footer { text-align:center; padding:30px; background:#000; color:gray; }
+
+    /* Animasi efek scroll */
+    .fade { opacity:0; transform:translateY(30px); transition: all 1s ease; }
+    .fade.show { opacity:1; transform:translateY(0); }
+
+    /* Efek mengetik */
+    .cursor { display:inline-block; width:3px; background-color:cyan; margin-left:3px; animation:blink 1s infinite; height:1em; vertical-align:middle; }
+    @keyframes blink {0%,50%{opacity:1;}50%,100%{opacity:0;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">Tentang</a>
+    <a href="#skills">Skill</a>
+    <a href="#projects">Proyek</a>
+    <a href="#contact">Kontak</a>
+    <a href="#address">Alamat</a>
+  </nav>
+
+  <header>
+    <h1 id="typing"></h1><span class="cursor"></span>
+    <p>Web Developer | Editor | Freelancer</p>
+    <button class="btn" onclick="alert('Terima kasih sudah berkunjung!')">Hubungi Saya</button>
+  </header>
+
+  <section id="about" class="fade" style="background-image:url('bacot.jpg');">
+    <h2>Tentang Saya</h2>
+    <p>Saya seorang pengembang web yang bersemangat menciptakan website modern dan responsif. Dengan pengalaman membangun website dari HP menggunakan Acode, saya membuktikan bahwa kreativitas tidak dibatasi oleh alat.Dan Saya adalah individu yang disiplin, jujur, dan bertanggung jawab. Terbiasa bekerja di lapangan dengan kondisi yang menuntut ketelitian, kekuatan fisik, dan kerja sama tim yang baik. Memiliki semangat belajar tinggi, siap menghadapi tantangan, serta selalu menjaga profesionalitas dan keselamatan kerja. Saya berkomitmen untuk memberikan hasil terbaik dalam setiap tanggung jawab yang diberikan.</p>
+  </section>
+
+  <section id="skills" class="fade" style="background-image:url('kepo.jpg');">
+    <h2>Skill</h2>
+    <div class="skills">
+      <div class="skill">Negosiasi</div>
+      <div class="skill">Berpikir krisis</div>
+      <div class="skill">Cermat dan Teliti</div>
+      <div class="skill">Kemampuan Adaptasi</div>
+      <div class="skill">Editing</div>
+      <div class="skill">kreatif</div>
+    </div>)
+  </section>
+
+  <section id="projects" class="fade" style="background-image:url('projects-bg.jpg');">
+    <h2>Proyek</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="project1.jpg" alt="Proyek 1">
+        <h3>Website Portfolio</h3>
+        <p>Website pribadi dengan desain profesional dan animasi smooth.</p>
+      </div>
+      <div class="project">
+        <img src="project2.jpg" alt="Proyek 2">
+        <h3>Landing Page Produk</h3>
+        <p>Halaman promosi interaktif dengan layout modern.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade" style="background-image:url('naon.jpg');">
+    <h2>Kontak</h2>
+    <p>Instagram: <a href="https://instagram.com/" style="color:cyan;">@rizkybgustian</a></p>
+    <p>Email: <a href="mailto:emailkamu@gmail.com" style="color:cyan;">rizkybagustian288@gmail.com</a></p>
+     <p>Facebook: <a href="https://facebook.com" style="color:cyan;">Rizky Bagustian Saputra</a></p>
+     <p>WhatsApp: <a href="https://WhatsApp.com" style="color:cyan;">085719905981</a></p>
+  </section>
+
+  <section id="address" class="fade" style="background-image:url('apa.jpg');">
+    <h2>Alamat</h2>
+    <p>Sukabumi, Jawa Barat, Indonesia,Jln Pelabuan II,Kelurahan Cipanengah,Kecamatan Lembursitu,KP.Kadulawang RT 02/RW01</p>
+    <p>Kode Pos: 43169</p>
+  </section>
+
+  <footer>
+    © 2025 Rizky Bagustian Saputra | Dibuat dengan dengan penuh harapan
+  </footer>
+
+  <script>
+    // Scroll fade
+    const fades = document.querySelectorAll('.fade');
+    window.addEventListener('scroll', () => {
+      fades.forEach(fade => {
+        const rect = fade.getBoundingClientRect();
+        if(rect.top < window.innerHeight-100) fade.classList.add('show');
+      });
+    });
+
+    // Efek mengetik otomatis
+    const text = "Rizky Bagustian Saputra";
+    const typing = document.getElementById("typing");
+    let i=0;
+    function type(){ if(i<text.length){ typing.innerHTML+=text.charAt(i); i++; setTimeout(type,100); } }
+    window.onload = type;
+  </script>
+</body>
+</html>
